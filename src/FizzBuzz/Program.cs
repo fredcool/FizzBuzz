@@ -1,3 +1,5 @@
+using FizzBuzz.Services;
+
 namespace FizzBuzz
 {
     public class Program
@@ -9,6 +11,7 @@ namespace FizzBuzz
             // Add services to the container.
 
             builder.Services.AddControllersWithViews();
+            builder.Services.AddSingleton<FizzBuzzService>();
 
             var app = builder.Build();
 

@@ -10,13 +10,14 @@ namespace FizzBuzz.Controllers
 
         public string PrintedWord { get; set; } = "";
     }
+
     public class InputModel
     {
         public int MaxNumber { get; set; }
         public List<DivisorModel>? Divisors { get; set; }
     }
 
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class FizzBuzzController : ControllerBase
     {
@@ -24,6 +25,12 @@ namespace FizzBuzz.Controllers
         public FizzBuzzController(FizzBuzzService fizzBuzzService)
         {
             _fizzBuzzService = fizzBuzzService;
+        }
+
+        [HttpGet]
+        public ActionResult Get()
+        {
+            return Ok();
         }
 
         [HttpPost]
